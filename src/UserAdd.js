@@ -32,8 +32,7 @@ class UserAdd extends Component {
 
   usernameIsNotUnique = () => {
     let notUnique = false
-    console.log(this.props.addedUser)
-    this.props.addedUser.forEach((element) => {
+    this.props.users.forEach((element) => {
       if (element.userName === this.state.userName) {
         notUnique = true
       }
