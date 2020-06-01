@@ -4,7 +4,6 @@ class UserAdd extends Component {
     firstName: '',
     lastName: '',
     userName: '',
-    addedUser: [],
   }
 
   handleChangeFirstName = (event) => {
@@ -33,7 +32,8 @@ class UserAdd extends Component {
 
   usernameIsNotUnique = () => {
     let notUnique = false
-    this.state.addedUser.forEach((element) => {
+    console.log(this.props.addedUser)
+    this.props.addedUser.forEach((element) => {
       if (element.userName === this.state.userName) {
         notUnique = true
       }
@@ -43,11 +43,11 @@ class UserAdd extends Component {
 
   addUser = (event) => {
     event.preventDefault()
-    this.state.addedUser.push({
-      firstName: this.state.firstName,
-      lastName: this.state.lastName,
-      userName: this.state.userName,
-    })
+    this.props.handleAddUser(
+      this.state.firstName,
+      this.state.lastName,
+      this.state.userName
+    )
     this.setState({ firstName: '', lastName: '', userName: '' })
   }
 

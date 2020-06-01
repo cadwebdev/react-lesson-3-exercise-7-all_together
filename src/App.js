@@ -12,6 +12,18 @@ The instructions for this project are located in the `instructions.md` file.
 */
 
 class App extends Component {
+  state = {
+    addedUser: [],
+  }
+
+  handleAddUser = (firstName, lastName, userName) => {
+    this.state.addedUser.push({
+      firstName: firstName,
+      lastName: lastName,
+      userName: userName,
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -19,7 +31,10 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">ReactND - Coding Practice</h1>
         </header>
-        <UserAdd />
+        <UserAdd
+          addedUser={this.state.addedUser}
+          handleAddUser={this.handleAddUser}
+        />
       </div>
     )
   }
