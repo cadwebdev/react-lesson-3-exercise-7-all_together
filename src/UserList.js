@@ -17,11 +17,11 @@ class UserList extends Component {
     const users = this.props.users
     const gamesPlayedButton = (
       <div>
-        <button onClick={this.toggleButton}>
+        <p>Players</p>
+        <button class="smallButton" onClick={this.toggleButton}>
           {this.state.showGamesPlayed ? 'Hide ' : 'Show '}
           Number of Games Played
         </button>
-        <p>Players</p>
       </div>
     )
     return (

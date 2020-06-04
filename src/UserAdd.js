@@ -76,7 +76,14 @@ class UserAdd extends Component {
           onChange={this.handleChangeUserName}
         />
 
-        <button disabled={this.addButtonIsDisabled()}>add</button>
+        <button class="smallButton" disabled={this.addButtonIsDisabled()}>
+          add
+        </button>
+        {this.usernameIsNotUnique() ? (
+          <p className="error">You cannot add a user that already exists.</p>
+        ) : (
+          ''
+        )}
       </form>
     )
   }
