@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import UserListItem from './UserListItem'
+import PropTypes from 'prop-types'
 
 class UserList extends Component {
   state = {
@@ -39,6 +40,10 @@ class UserList extends Component {
       </div>
     )
   }
+}
+
+UserList.propTypes = {
+  users: PropTypes.array.isRequired,
 }
 
 export default UserList

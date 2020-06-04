@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
 class UserAdd extends Component {
   state = {
     firstName: '',
@@ -78,6 +80,11 @@ class UserAdd extends Component {
       </form>
     )
   }
+}
+
+UserAdd.propTypes = {
+  users: PropTypes.array.isRequired,
+  handleAddUser: PropTypes.func.isRequired,
 }
 
 export default UserAdd
